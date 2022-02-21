@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     get 'users', to: 'devise/session#new'
   end
 
+  get 'user/:id', to: 'user#show', as: 'user'
+
+  resources :rooms
+
   # Defines the root path route ("/")
   # root "articles#index"
 end
