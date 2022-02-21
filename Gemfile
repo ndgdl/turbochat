@@ -71,4 +71,9 @@ group :test do
   gem "webdrivers"
 end
 
+# Devise for user
 gem "devise", "~> 4.8"
+
+# Bootstrap
+gem 'bootstrap', '~> 5.1.3'
+gem 'jquery-rails'
