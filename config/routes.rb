@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   root 'pages#home'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
     get 'users', to: 'devise/session#new'
   end
 
-  get 'user/:id', to: 'user#show', as: 'user'
+  get 'user/:id', to: 'users#show', as: 'user'
 
   resources :rooms do
     resources :messages
