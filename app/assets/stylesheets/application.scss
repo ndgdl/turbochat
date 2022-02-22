@@ -92,12 +92,16 @@ body {
 
 .user_list_item {
   height: 55px;
-  background-color: #343a40 !important;
+  background-color: #22252A !important;
+  &:hover {
+    background-color: #343a40 !important;
+    transition: all 0.5s ease-in-out;
+  }
 }
 
 .room_list_item {
   height: 55px;
-  background-color: #343a40;
+  background-color: #22252A;
   color: #fff;
 }
 
