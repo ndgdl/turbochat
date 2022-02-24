@@ -4,13 +4,8 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <% if resource.avatar.attached? %>
-      <%= image_tag(resource.avatar_thumbnail) %>
-    <% else %>
-      <%= image_tag('/assets/default_avatar.jpg', style: 'width: 150px; height: 150px;') %>
-    <% end %>
-
-    <%= f.file_field :avatar %>
+    <%= f.label "Avatar" %>
+    <%= gravatar_for(current_user, options { size: 50 }) %>
   </div>
 
   <div class="field">
