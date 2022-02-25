@@ -1,0 +1,13 @@
+<% if current_user %>
+  <div class="search-form d-flex flex-column" data-controller="search-form">
+    <%= form_with url: search_path, method: :post do |f| %>
+      <%= f.search_field :search,
+            class: "form-control me-2", placeholder: "Search for users",
+            oninput: "this.form.requestSubmit()",
+            data: { search_form_target: "input",
+                    action: "keyup->search-form#displayResults focusout->search-form#hideResults" } %>
+    <% end %>
+    <div id="search_results" class="d-none" data-search-form-target="results" >
+    </div>
+  </div>
+<% end %>

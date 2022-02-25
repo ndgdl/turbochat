@@ -14,11 +14,15 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.all_except(current_user).where('email ILIKE ?', "%#{params[:search]}%")
+    if params[:search].present?
+      @users = User.all_except(current_user).search_by_email(params[:search])
+    else
+      @users = []
+    end
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: turbo_stream.update("search_results",
-                                                 partial: "users/search_results",
+                                                 partial: "layouts/search_results",
                                                  locals: { users: @users })
       end
     end

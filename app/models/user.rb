@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   scope :all_except, -> (user) { where.not(id: user) }
+  scope :search_by_email, -> (email) { where('email ILIKE ?', "%#{email}%")}
   after_create_commit { broadcast_append_to 'users' }
   after_update_commit { broadcast_update }
   has_many :messages
