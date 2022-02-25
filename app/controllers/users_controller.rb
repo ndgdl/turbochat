@@ -13,6 +13,17 @@ class UsersController < ApplicationController
     render "rooms/index"
   end
 
+  def search
+    @users = User.all_except(current_user).where('email ILIKE ?', "%#{params[:search]}%")
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.update("search_results",
+                                                 partial: "users/search_results",
+                                                 locals: { users: @users })
+      end
+    end
+  end
+
   private
 
   def get_name(user1, user2)

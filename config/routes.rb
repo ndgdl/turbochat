@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   }
 
   get 'user/:id', to: 'users#show', as: 'user'
+  post 'users/search', to: 'users#search', as: 'search'
 
 
   # Defines the root path route ("/")
