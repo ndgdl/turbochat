@@ -1,5 +1,5 @@
 <% if current_user %>
-  <div class="search-form d-flex flex-column" data-controller="search-form">
+  <div id="search_form" class="search-form d-flex flex-column position-relative" data-controller="search-form">
     <%= form_with url: search_path, method: :post,
                   data: { search_form_target: "form" } do |f| %>
       <%= f.search_field :search,
@@ -7,7 +7,7 @@
             data: { search_form_target: "input",
                     action: "input->search-form#search" } %>
     <% end %>
-    <div id="search_results" data-search-form-target="results" >
+    <div id="search_results" class="d-none" data-search-form-target="results" >
     </div>
   </div>
 <% end %>
