@@ -6,11 +6,11 @@ export default class extends Controller {
   search() {
     clearTimeout(this.timeout);
     this.timeout = setTimeout(() => {
-      this.formTarget.requestSubmit()
       if (this.inputTarget.value === "") {
         this.resultsTarget.classList.add("d-none");
       } else {
         this.resultsTarget.classList.remove("d-none");
+        this.formTarget.requestSubmit()
       }
     }, 500);
   }

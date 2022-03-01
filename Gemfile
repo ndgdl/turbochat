@@ -49,6 +49,9 @@ gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 gem 'mini_magick'
 
+# Use Faker for seeds
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
