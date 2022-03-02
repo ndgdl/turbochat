@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'user/:id', to: 'users#show', as: 'user'
+  get 'users', to: 'users#index', as: 'users'
   post 'users/search', to: 'users#search', as: 'search'
 
 

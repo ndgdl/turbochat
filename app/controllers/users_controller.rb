@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all_except(current_user)
+
+    @room = Room.new
+    @rooms = Room.public_rooms
+    @private_rooms = Room.private_rooms(current_user)
+  end
+
   def show
     @user = User.find(params[:id])
     @users = User.all_except(current_user)

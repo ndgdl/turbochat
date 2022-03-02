@@ -18,7 +18,6 @@ class Room < ApplicationRecord
     users.each do |user|
       Participant.create(user_id: user.id, room_id: single_room.id)
     end
-    broadcast_append_to "private_rooms"
     single_room
   end
 

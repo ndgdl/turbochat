@@ -1,0 +1,13 @@
+<%= turbo_frame_tag "appearance_channel" %>
+<div id="appearance_channel"></div>
+
+<div id="chatroom_container" class="row bg-dark text-light">
+  <%= render 'layouts/side_panel' %>
+  <div id="room_container" class="col-md-8 col-sm-8 bg-dark text-light">
+    <h4> All Users </h4>
+    <%= turbo_stream_from "users" %>
+    <div id="users">
+      <%= render @users %>
+    </div>
+  </div>
+</div>
