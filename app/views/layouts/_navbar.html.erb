@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Turbochat</a>
-    <%= render "layouts/search_form" %>
+    <div class="navbar-end d-flex justify-content-around gap-3">
+      <%= link_to "All Users", users_path, class: "btn btn-outline-primary" %>
+      <%= render "layouts/search_form" %>
+    </div>
   </div>
 </nav>
