@@ -1,4 +1,4 @@
-<li class="list-group-item d-flex align-items-center justify-content-between user_list_item border-0">
+<li class="d-flex align-items-center justify-content-around border-0">
   <div class="icon-container">
     <%= gravatar_for(current_user, options = { class: 'chat_pfp' })%>
     <%= turbo_stream_from "user_status" %>
@@ -7,5 +7,5 @@
       <%= render "users/status", user: current_user %>
     </div>
   </div>
-  <div class="ms-2 username text-white"><%= current_user.email %></div>
+  <div class="ms-2 username text-white"><%= current_user.email.upcase %></div>
 </li>
