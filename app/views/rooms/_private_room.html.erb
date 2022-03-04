@@ -1,18 +1,2 @@
-<% if @single_room&.participant?(user) %>
-  <% isActive = 'active' %>
-<% else %>
-  <% isActive = ''  %>
-<% end %>
-<div>
-</div>
-<li class="list-group-item d-flex align-items-center justify-content-between user_list_item <%= isActive%>">
-  <div class="icon-container">
-    <%= link_to gravatar_for(user, options = { class: 'chat_pfp' }), user %>
-    <%= turbo_stream_from "user_status" %>
-
-    <div>
-      <%= render "users/status", user: user %>
-    </div>
-  </div>
-  <%= link_to user.email, user, class: 'ms-2 username', data: { turbo: false } %>
-</li>
+<% user = private_room.other_participant(current_user) %>
+<%= render 'users/user', user: user %>

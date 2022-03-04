@@ -3,11 +3,9 @@
   <%= render 'users/current_user' %>
 
   <h4> Private Rooms </h4>
-  <%#= turbo_stream_from "private_rooms" %>
   <div id="private_rooms">
-    <% @private_rooms.each do |private_rooms| %>
-      <% other_user = private_rooms.other_participant(current_user) %>
-      <%= render 'rooms/private_room', user: other_user %>
+    <% @private_rooms.each do |private_room| %>
+      <%= render 'rooms/private_room', private_room: private_room %>
     <% end %>
   </div>
 

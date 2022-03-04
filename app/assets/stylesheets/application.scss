@@ -37,6 +37,12 @@ body {
   overflow-y: scroll;
 }
 
+#users_list {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 #room_container {
   height: 100vh;
   margin-right: 0px;
@@ -170,7 +176,7 @@ body {
   border-radius: 50%;
   background-color: grey;
   border: 1px solid white;
-  bottom: 10px;
+  bottom: 5px;
   right: 10px;
   position: absolute;
 }
