@@ -3,7 +3,7 @@
   <%= render 'users/current_user' %>
 
   <h4> Private Rooms </h4>
-  <div id="private_rooms">
+  <div id="private_rooms" class="mb-3">
     <% @private_rooms.each do |private_room| %>
       <%= render 'rooms/private_room', private_room: private_room %>
     <% end %>
@@ -12,7 +12,7 @@
   <h4> Rooms </h4>
   <%= render 'layouts/new_room_form' %>
   <%= turbo_stream_from "rooms" %>
-  <div id="rooms">
+  <div id="rooms" class="mb-3">
     <%= render @rooms %>
   </div>
 

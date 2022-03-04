@@ -1,4 +1,4 @@
-<li class="d-flex align-items-center justify-content-around border-0">
+<div class="d-flex align-items-center justify-content-around mb-3">
   <div class="icon-container">
     <%= gravatar_for(current_user, options = { class: 'chat_pfp' })%>
     <%= turbo_stream_from "user_status" %>
@@ -8,4 +8,4 @@
     </div>
   </div>
   <div class="ms-2 username text-white"><%= current_user.email.upcase %></div>
-</li>
+</div>
