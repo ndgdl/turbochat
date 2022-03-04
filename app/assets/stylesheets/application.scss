@@ -54,12 +54,12 @@ body {
   overflow-y: hidden;
 }
 
-#single_room {
-  height: calc(100vh - 150px);
-}
+// #single_room {
+//   height: calc(100vh - 150px);
+// }
 
 #messages {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 175px);
   overflow-x: hidden;
   overflow-y: scroll;
 }
