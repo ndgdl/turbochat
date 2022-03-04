@@ -27,6 +27,33 @@ body {
   padding: 10px;
 }
 
+#side_panel {
+  height: 100vh;
+  margin-right: 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-bottom: 55px;
+}
+
+#rooms {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#room_container {
+  height: 100vh;
+  margin-right: 0px;
+}
+
+#chatroom_container {
+  height: 100vh;
+  margin-right: 0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 #single_room {
   height: calc(100vh - 150px);
 }
@@ -41,26 +68,6 @@ body {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
-}
-
-#room_container {
-  height: 100vh;
-  margin-right: 0px;
-}
-
-#side_panel {
-  height: 100vh;
-  margin-right: 0px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  margin-bottom: 55px;
-}
-
-#chatroom_container {
-  height: 100vh;
-  margin-right: 0px;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 #search_results {

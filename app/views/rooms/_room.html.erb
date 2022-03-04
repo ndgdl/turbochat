@@ -1,3 +1,9 @@
+<% if @single_room == room  %>
+  <% isActive = 'active' %>
+<% else %>
+  <% isActive = ''  %>
+<% end %>
+
 <div>
-  <%= link_to room.name, room %>
+  <%= link_to room.name, room, class: "btn btn-outline-secondary #{isActive}" %>
 </div>
