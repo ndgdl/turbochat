@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: turbo_stream.update("search_results",
-                                                 partial: "layouts/search_results",
+                                                 partial: "shared/search_results",
                                                  locals: { users: @users })
       end
     end

@@ -10,7 +10,7 @@
   </div>
 
   <h4> Rooms </h4>
-  <%= render 'layouts/new_room_form' %>
+  <%= render 'shared/new_room_form' %>
   <%= turbo_stream_from "rooms" %>
   <div id="rooms" class="mt-2 mb-3">
     <%= render @rooms %>

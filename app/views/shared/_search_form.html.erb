@@ -4,6 +4,7 @@
                   data: { search_form_target: "form" } do |f| %>
       <%= f.search_field :search,
             class: "form-control me-2", placeholder: "Search for users",
+            autocomplete: "off",
             data: { search_form_target: "input",
                     action: "input->search-form#search" } %>
     <% end %>

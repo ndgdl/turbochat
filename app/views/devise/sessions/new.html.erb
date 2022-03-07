@@ -6,16 +6,16 @@
           <h2 class="card-title text-center mb-4 mt-1">Sign in</h2>
           <hr>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
+          <%= render "devise/shared/error_messages", resource: resource %>
             <div class="input-group mb-3">
               <span class="input-group-text"> <%= icon('fas', 'user') %></span>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email",
+              <%= f.email_field :email, autofocus: true, autocomplete: "off",
                                 class: "form-control", placeholder: "Email" %>
             </div> <!-- input-group -->
 
             <div class="input-group mb-3">
               <span class="input-group-text"> <%= icon('fas', 'lock') %></span>
-              <%= f.password_field :password, autocomplete: "current-password",
+              <%= f.password_field :password, autocomplete: "off",
                                     class: "form-control", placeholder: "******" %>
             </div> <!-- input-group -->
 

@@ -1,0 +1,14 @@
+  <div class="results-list">
+    <% if params[:search].present? && users.empty? %>
+      <p class="text-muted text-center p-3 m-0">No results</p>
+    <% else %>
+      <ul class="list-group">
+        <% users.each do |user| %>
+          <%= link_to user, class: "list-group-item-action" do %>
+            <%= gravatar_for(user, options = { class: "chat_pfp"}) %>
+            <%= highlight(user.email, params[:search]) %>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>

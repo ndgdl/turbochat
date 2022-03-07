@@ -2,7 +2,7 @@
 <div id="appearance_channel"></div>
 
 <div id="chatroom_container" class="row bg-dark text-light">
-  <%= render 'layouts/side_panel' %>
+  <%= render 'shared/side_panel' %>
 
   <div id="room_container" class="col-md-8 col-sm-8 bg-dark text-light">
     <% if @single_room %>
@@ -14,7 +14,7 @@
         <div id="messages" data-controller="scroll">
           <%= render @messages %>
         </div>
-        <%= render 'layouts/new_message_form' %>
+        <%= render 'shared/new_message_form' %>
       </div>
     <% end %>
   </div>
