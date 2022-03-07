@@ -32,20 +32,19 @@
               <% end %>
               <small class="text-muted">(leave blank if you don't want to change it)</small>
             </p>
-            <div class="card gap-1 py-2 px-1 mb-3">
-              <div class="input-group">
+            <div class="input-groups mb-3">
+              <div class="input-group mb-1">
                 <%= f.label :password, class: "input-group-text" %>
                 <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
               </div>
-
               <div class="input-group">
                 <%= f.label :password_confirmation, class: "input-group-text" %>
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
               </div>
             </div>
 
-            <div class="input-group mb-3">
-              <p class="form-label">Confirm you current password before updating</p>
+            <p class="form-label m-0">Confirm you current password before updating</p><br>
+            <div class="input-group mt-0 mb-3">
               <%= f.label :current_password, class: "input-group-text" %>
               <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %><br />
             </div>
