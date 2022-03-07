@@ -3,6 +3,7 @@ class Message < ApplicationRecord
   belongs_to :room
   after_create_commit {broadcast_append_to room}
   before_create :confirm_participant
+  validates :body, presence: true
 
   def confirm_participant
     return unless room.is_private

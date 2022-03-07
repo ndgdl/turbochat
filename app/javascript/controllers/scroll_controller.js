@@ -11,8 +11,10 @@ export default class extends Controller {
 
   /** On stop */
   disconnect() {
-    console.log("Disconnected")
-    document.getElementById("messages").removeEventListener
+    if (document.getElementById("messages")) {
+      console.log("Disconnected")
+      document.getElementById("messages").removeEventListener
+    }
   }
 
   /** Custom function */
