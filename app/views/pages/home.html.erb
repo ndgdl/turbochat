@@ -3,7 +3,8 @@
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">Welcome to Turbochat</h1>
       <% if current_user %>
-      <h3 class="fw-light text-muted mb-5"> <%= current_user.email %> </h1>
+      <!-- if user connected, showing avatar, 1 link to go to chats and 2 links (logout and edit) -->
+        <h3 class="fw-light text-muted mb-5"> <%= current_user.email %> </h1>
         <%= gravatar_for(current_user) %>
         <p>
           <%= link_to "Start Chatting", rooms_path, class: "btn btn-primary my-2" %>
@@ -12,7 +13,9 @@
           <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary my-2" %>
           <%= link_to "Edit Account", edit_user_registration_path, class: "btn btn-outline-primary my-2" %>
         </div>
+
       <% else %>
+      <!-- if user not connected, showing text and 2 links (login and signup) -->
         <p class="lead text-muted">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum magnam veniam similique expedita tenetur neque deleniti nam iure maxime fuga! Sequi vero nisi nobis atque repudiandae amet non corrupti nesciunt.
         </p>
@@ -21,6 +24,7 @@
           <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
         </div>
       <% end %>
+
     </div>
   </div>
 </section>

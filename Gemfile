@@ -52,6 +52,9 @@ gem 'mini_magick'
 # Use Faker for seeds
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
+# Use Fontawesome for icons
+gem 'font-awesome-sass', '~> 5.15.1'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
