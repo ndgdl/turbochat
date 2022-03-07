@@ -9,19 +9,23 @@
             <%= render "devise/shared/error_messages", resource: resource %>
 
             <div class="input-group mb-3">
-              <span class="input-group-text"> <%= icon('fas', 'user') %></span>
+              <%= f.label :email, class: "input-group-text" %>
               <%= f.email_field :email, autofocus: true, autocomplete: "email",
-                                class: "form-control", placeholder: "Email" %>
+                                class: "form-control", placeholder: "example@gmail.com" %>
             </div> <!-- input-group -->
 
-            <div class="input-group">
-              <span class="input-group-text"> <%= icon('fas', 'lock') %></span>
+            <div class="input-groups mb-3">
+              <div class="input-group mb-1">
+                <%= f.label :password, class: "input-group-text" %>
                 <%= f.password_field :password, autocomplete: "new-password",
-                                      class: "form-control mb-3", placeholder: "Password" %>
-                <%= f.password_field :password_confirmation, autocomplete: "new-password",
-                                      class: "form-control", placeholder: "Confirm your password" %>
+                                      placeholder: "*******", class: "form-control" %>
               </div>
-            </div> <!-- input-group -->
+              <div class="input-group">
+                <%= f.label :password_confirmation, class: "input-group-text" %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password",
+                                      placeholder: "*******", class: "form-control" %>
+              </div>
+            </div>
             <p class="form-label text-center mb-3">
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>

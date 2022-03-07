@@ -1,5 +1,10 @@
 <%= form_with(model: @room, remote: true, class: 'd-flex gap-1',
               data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }) do |f| %>
-  <%= f.text_field :name, class: 'form-control', autocomplete: 'off' %>
-  <%= f.submit data: { disable_with: false }, class: "btn btn-sm btn-outline-light" %>
+  <div class="input-group">
+    <%= f.text_field :name, class: 'form-control', autocomplete: 'off',
+                      placeholder: "Room's name", aria_describedby: "button-add-room" %>
+    <%= f.submit data: { disable_with: false },
+                 class: "btn btn-sm btn-outline-light",
+                 id: "button-add-room" %>
+  </div>
 <% end %>
