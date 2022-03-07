@@ -17,9 +17,9 @@
             <div class="input-group">
               <span class="input-group-text"> <%= icon('fas', 'lock') %></span>
               <div class="form-control">
-                <%= f.password_field :password, autocomplete: "current-password",
+                <%= f.password_field :password, autocomplete: "new-password",
                                       class: "form-control mb-3", placeholder: "Password" %>
-                <%= f.password_field :confirm_password, autocomplete: "current-password",
+                <%= f.password_field :confirm_password, autocomplete: "new-password",
                                       class: "form-control", placeholder: "Confirm your password" %>
               </div>
             </div> <!-- input-group -->
