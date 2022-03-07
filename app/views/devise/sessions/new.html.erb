@@ -6,11 +6,12 @@
           <h2 class="card-title text-center mb-4 mt-1">Sign in</h2>
           <hr>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="input-group mb-3">
-                <span class="input-group-text"> <%= icon('fas', 'user') %></span>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email",
-                                  class: "form-control", placeholder: "Email" %>
-              </div> <!-- input-group -->
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="input-group mb-3">
+              <span class="input-group-text"> <%= icon('fas', 'user') %></span>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                                class: "form-control", placeholder: "Email" %>
+            </div> <!-- input-group -->
 
             <div class="input-group mb-3">
               <span class="input-group-text"> <%= icon('fas', 'lock') %></span>
@@ -18,9 +19,8 @@
                                     class: "form-control", placeholder: "******" %>
             </div> <!-- input-group -->
 
-
             <% if devise_mapping.rememberable? %>
-            <div class="form-check mb-3">
+            <div class="form-check form-switch mb-3">
               <%= f.check_box :remember_me, class: "form-check-input" %>
               <%= f.label :remember_me, class: "form-check-label" %>
             </div> <!-- form-check -->
